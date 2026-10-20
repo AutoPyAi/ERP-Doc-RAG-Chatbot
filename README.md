@@ -27,20 +27,52 @@ To solve this, the standard FAISS vector search was upgraded to a two-stage retr
     Strict Mode: Forces the LLM to answer only from the retrieved context. If the answer is not in the PDF, it refuses to guess.
 
 🖼️ Real Output Examples
-1. Extracting Large Tables without Data Loss
 
-Prompt: "show me the simplification list for Commercial Project Management delivered in SAP S/4 HANA"
+### 1. "Extracting Large Tables without Data Loss"
+*Prompt: "show me the simplification list for Commercial Project Management delivered in SAP S/4 HANA"*
 The system perfectly extracted a 10-row table of SAP Notes and cited the exact PDF page (Page 52).
-2. Exact T-Code Definitions
+![Table Extraction](docs/1- SAP Note Number Table.png)
 
-Prompt: "what is T-Code OBY6?"
-No hallucination. It pulled the exact definition and cited Page 1 of the FICO guide.
-3. Complex Configuration Steps
+### 2. "Extracting Security settings steps for SAP S/4HANA Finance"
+*Prompt: "get me information on security settings for SAP S/4HANA Finance"*
+The system perfectly extracted all Security settings steps for SAP S/4HANA Finance in a table plus Key configuration steps (Installation Guide) and cited the exact PDF page (Page 35).
+![Table Extraction](docs/9- Security setting for SAP SHANNA Fi.png)
 
-Prompt: "what is the procedure to Access the Mobile Add-On for ERP ConfigPanel?"
+### 3. T-Code FBL1N
+*Prompt: "explain t-code FBL1N"*
+Instant definition of the Vendor Line Item Display transaction.
+![T-Code FBL1N](docs/The T-Code.png)
+
+### 4. "Complex Configuration Steps"
+*Prompt: "what is the procedure to Access the Mobile Add-On for ERP ConfigPanel?"*
 It extracted a multi-step procedure perfectly formatted as a numbered list.
+![T-Code FBL1N](docs/5- The Mobile Add-On Steps_5.png)
+
+### 5. "Extracts all features of system component tab"
+*Prompt: "what is the procedure to Access the Mobile Add-On for ERP ConfigPanel?"*
+It extracted a multi-step procedure perfectly formatted in a table.
+![T-Code FBL1N](docs/3-The System Components Tab.png)
+
+### 6. "Back-End Configuration Settings"
+*Prompt: "to Run transaction show me back end settings"*
+Pulled exact system parameters and fallback IDs from the guide.
+![T-Code FBL1N](docs/4-The Backend Settings Table.png)
+
+### 7. "This is a highly technical, SAP-specific question about Data Controllers (DCs), Business Partners (BP), and Authorization Objects"
+*Prompt: "It successfully grabbed the text explaining the logic (Company Code BUKRS + Infotype 0001 + feature toggle)"*
+ it pulled the exact example table showing the BP Instance, BP Role, and the assigned DCs (DC_DE, DC_US)
+![T-Code FBL1N](docs/6- How DCs are derived.png)
 
 
+### 8. "When to use Data Contollers(DCs) to control authorization for BPs"
+*Prompt: "It extracts exact procedure when to use DCs"*
+With exact pdf file name and page No 67
+![T-Code FBL1N](docs/7- when to use DCs.png)
+
+### 9. "Extracts steps for deploying the content of ECC HANNA"
+*Prompt: "Show the step in a table with proper heading"*
+With exact pdf file name and page No 34
+![T-Code FBL1N](docs/8- steps for deploying the content of ECC HANNA.png)
 
 🎥 Video Walkthrough
 
